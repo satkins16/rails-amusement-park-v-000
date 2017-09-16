@@ -4,3 +4,6 @@ Mood <%= @user.mood %>
 <%= @user.happiness %>
 <%= @user.nausea %>
 <%= @user.height %>
+<% if @user.admin %>
+  ADMIN
+<% end %>
