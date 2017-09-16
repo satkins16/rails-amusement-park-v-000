@@ -1,12 +1,24 @@
 <%= @user.name %>
 Mood <%= @user.mood %>
-<%= @user.tickets %>
-<%= @user.happiness %>
-<%= @user.nausea %>
-<%= @user.height %>
-<% if @user.admin %>
+Tickets: <%= @user.tickets %>
+Happiness: <%= @user.happiness %>
+Nausea: <%= @user.nausea %>
+Height: <%= @user.height %>
+Admin: <% if @user.admin %>
   ADMIN
 <% end %>
+
+<% if @message %>
+  <div class="center alert">
+    <p><%= @message %></p>
+  </div>
+<% end %>
+
+Thanks for riding the Ferris Wheel!
+You are not tall enough to ride the Teacups
+You do not have enough tickets to ride the Ferris Wheel
+You are not tall enough to ride the Roller Coaster
+You do not have enough tickets to ride the #{@rollercoaster.name}
 
 <%= link_to "Log Out", signout_path, method: :delete %>
 <%= link_to "See attractions", attractions_path %>
